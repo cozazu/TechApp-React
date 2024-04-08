@@ -6,13 +6,13 @@ export interface IProduct {
     stock: number;
     image: string;
     categoryId: number;
-}
+};
 
 export interface ICategory {
     id: number;
     name: string;
     image: string;
-}
+};
 
 export interface IOrderUser {
     id: number;
@@ -21,14 +21,14 @@ export interface IOrderUser {
     address: string;
     phone: string;
     role: "admin" | "user";
-}
+};
 
 export interface IOrder {
     status: "approved" | "rejected" | "pending";
     date: string;
     products: IProduct[];
     id: number;
-}
+};
 
 export interface IUser {
     email: string;
@@ -36,10 +36,10 @@ export interface IUser {
     name: string;
     address: string;
     phone: string;
-}
+};
 
 export interface IProfile {
     email: string;
     password: string;
-}
+};
 
