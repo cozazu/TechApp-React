@@ -1,10 +1,10 @@
 import { FavoriteContainer, Image } from './Favorite.styles'
-
+import estrellaFavoritos from './estrellaFavoritos.png'
 const Favorite: React.FC = (): React.ReactElement => {
   return (
     <FavoriteContainer>
       <Image
-        src="	https://cdn-icons-png.flaticon.com/512/130/130193.png"
+        src="estrellaFavoritos.png"
         alt="Favorite"
       />
     </FavoriteContainer>

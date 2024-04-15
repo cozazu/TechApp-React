@@ -1,11 +1,10 @@
-import { SearchBarContainer, Input, ButtonSearch } from "./SearchBar.styles"
+/* import { SearchBarContainer, Input, ButtonSearch } from "./SearchBar.styles" */
+import SearchBar from "./SearchBar.styles.tailwind"
 
-const SearchBar: React.FC = (): React.ReactElement => {
+const SearchBarContainer: React.FC = (): React.ReactElement => {
   return (
-    <SearchBarContainer>
-      <Input type="text" placeholder="Search" />
-      <ButtonSearch>Search</ButtonSearch>
-    </SearchBarContainer>
+    <SearchBar>
+    </SearchBar>
   )
 }
 
