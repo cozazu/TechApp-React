@@ -1,9 +1,18 @@
-/* @type {import('next').NextConfig} */
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['http2.mlstatic.com'],
-    },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'http2.mlstatic.com',
+      },
+      {
+        hostname: 'cdn-icons-png.flaticon.com',
+      },
+      {
+        hostname: 'images.pexels.com',
+      },
+    ],
+  },
 }
-  
-export default nextConfig;
+
+export default nextConfig
