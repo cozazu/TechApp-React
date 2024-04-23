@@ -15,17 +15,12 @@ export const NavBarRight: React.FC = (): React.ReactElement => {
     router.push("/");
   };
 
-  const handleClick2 = () => {
-    const token = Cookies.get("token");
-    console.log(token);
-  };
-
   return (
     <nav>
       <ul className="md:flex content-around gap-3 hidden text-slate-50">
-        <button onClick={handleClick2}>Help</button>
         {token && (
           <>
+            <Link href="/infoUser">Info user</Link>
             <Link href="/orders">history</Link>{" "}
             <button onClick={handleClick}>Log Out</button>
           </>

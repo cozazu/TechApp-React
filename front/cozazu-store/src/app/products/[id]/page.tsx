@@ -1,5 +1,6 @@
 import { GetDataProducts } from "../../../utils/getData"
 import Link from "next/link"
+import ButtonAddCart from "../../../components/buttonAddCart"
 
 const DetailProduct = async ({ params }: { params: { id: string } }) => {
     const products = await GetDataProducts()
@@ -16,7 +17,7 @@ const DetailProduct = async ({ params }: { params: { id: string } }) => {
                 <p className="text-xl font-bold mb-2">${product?.price}</p>
                 <p className="mb-2">Stock: {product?.stock}</p>
                 <p className="mb-2">Category: {product?.categoryId}</p>
-                
+                <ButtonAddCart id={product?.id}/>
             </div>
         </div>
     )

@@ -40,6 +40,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const response = await LoginPost(LoginForm);
+    localStorage.setItem("user", JSON.stringify(response.user));
     
     if (response.token) {
       setToken(response.token);
