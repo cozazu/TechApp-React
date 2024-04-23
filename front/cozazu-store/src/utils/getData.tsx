@@ -2,7 +2,7 @@ import { IProduct } from "@/app/types"
 import { productsToPreLoad } from "./ProductsTopreload"
 
 export const GetDataProducts = async (): Promise<IProduct[]> => {
-    const res = await fetch("http://localhost:3001/products")
+    const res = await fetch("http://localhost:3000/products")
     const data: IProduct[] = await res.json()
     const dataImages: IProduct[] = data.map((product: IProduct) => {
         return {

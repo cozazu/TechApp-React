@@ -1,10 +1,12 @@
 "use client"
 
+import { useLoginContext } from "../loginContext";
 import Image from "next/image"
 import { IProduct } from "@/app/types"
 import Link from "next/link";
 
 const CardProduct = ({id, name, image, price, description, stock, categoryId}: IProduct): React.ReactElement => {
+    const {count, setCount} = useLoginContext();
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => { 
         const id = Number(e.currentTarget.id);
         const cart: {id: number, quantity: number}[] = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -20,6 +22,12 @@ const CardProduct = ({id, name, image, price, description, stock, categoryId}: I
         e.preventDefault();
         e.stopPropagation();
         console.log(cart)
+        const totalproducts = cart.reduce(
+            (acc: number, item: { id: number; quantity: number }) => {
+              return acc + item.quantity;
+            }, 0);
+      
+        setCount(totalproducts);
     }
 
     return (

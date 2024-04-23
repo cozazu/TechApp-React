@@ -6,8 +6,11 @@ import { IProductcart } from "@/app/types"
 import { createOrder } from "@/utils/postOrders";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { useLoginContext } from "../loginContext";
+import Link from "next/link";
 
 const Cart: React.FC = (): React.ReactElement => {
+  const { token } = useLoginContext();
   const [product, setProduct] = useState<IProductcart[]>([]);
   const router = useRouter();
 
@@ -47,7 +50,11 @@ const Cart: React.FC = (): React.ReactElement => {
           </div>
         ))}      
       </div>
-      <button className="flex bg-slate-950 text-slate-50 rounded-md my-4 py-4 px-8 gap-2 justify-center items-center hover:bg-amber-500" onClick={handleClick}><RiShoppingBagLine color="white" size={25} />BUY</button>
+      {!!token ? <button  className="flex bg-slate-950 text-slate-50 rounded-md my-4 py-4 px-8 gap-2 justify-center items-center hover:bg-amber-500" onClick={handleClick}><RiShoppingBagLine color="white" size={25} />BUY</button> 
+      : <Link href="/register">
+          <button  className="flex bg-slate-950 text-slate-50 rounded-md my-4 py-4 px-8 gap-2 justify-center items-center hover:bg-amber-500"><RiShoppingBagLine color="white" size={25} />BUY</button>
+        </Link>}
+      
     </div>
   )
 }  

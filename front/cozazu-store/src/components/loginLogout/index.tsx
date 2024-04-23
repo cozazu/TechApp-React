@@ -6,15 +6,20 @@ import { useRouter } from "next/navigation";
 
 export const NavBarRight: React.FC = (): React.ReactElement => {
   const router = useRouter();
-  const { setToken, token } = useLoginContext();
+  const { setToken, token, setCount } = useLoginContext();
   const handleClick = () => {
     setToken(null);
+    localStorage.removeItem("count");
+    localStorage.removeItem("cart");
+    setCount(0);
     router.push("/");
   };
+
   const handleClick2 = () => {
     const token = Cookies.get("token");
     console.log(token);
   };
+
   return (
     <nav>
       <ul className="md:flex content-around gap-3 hidden text-slate-50">

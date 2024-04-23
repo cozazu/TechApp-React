@@ -1,14 +1,14 @@
 export default function Contact() {
     return (
         <div className="container mx-auto">
-            <h2 className="text-center mb-5">CONTACT US</h2>
+            <h2 className="text-center mb-5 mt-6 font-extrabold">CONTACT US</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex justify-center">
                     <img src="/servicioalcliente.png" alt="servicioalcliente" className="max-w-full" />
                 </div>
                 <div>
                     <div className="contact-info">
-                        <h3>Contact information</h3>
+                        <h3 className="mb-4">Contact information</h3>
                         <p>You can contact us in the following ways:</p>
                         <ul>
                             <li>Telephone: 01-800-0982345</li>
@@ -16,7 +16,7 @@ export default function Contact() {
                             <li>Dirección: Cra 48d # 188 - 01</li>
                         </ul>
                     </div>
-                    <div className="contact-form">
+                    <div className="contact-form mt-4">
                         <h3>Contact Form</h3>
                         <form className="flex flex-col justify-start h-full">
                             <div className="mb-3">
